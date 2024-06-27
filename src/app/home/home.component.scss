@@ -1,0 +1,11 @@
+.home-container {
+  height: 100vh;
+  background-size: auto;
+  min-height: 100vh;
+  background-image: url('../../assets/homePage.webp');
+
+  h1 {
+    color: #007bff;
+    font-size: 2rem;
+  }
+}

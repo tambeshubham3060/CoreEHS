@@ -1,0 +1,92 @@
+$primary-color: #673ab7;
+$secondary-color: #FFC107;
+$background-color: #f9f9f9;
+$text-color: #333;
+$card-background: #fff;
+$border-radius: 8px;
+$box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+.quiz-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: $background-color;
+  padding: 20px;
+  border-radius: $border-radius;
+  box-shadow: $box-shadow;
+  max-width: 800px;
+  margin: 20px auto;
+
+  h1 {
+    color: primary;
+    margin-bottom: 20px;
+  }
+
+  .timer {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: $secondary-color;
+  }
+
+  .question-container {
+    background-color: $card-background;
+    padding: 20px;
+    border-radius: $border-radius;
+    box-shadow: $box-shadow;
+    margin-bottom: 20px;
+    width: 100%;
+
+    h3 {
+      color: $text-color;
+      margin-bottom: 15px;
+    }
+
+    mat-form-field {
+      width: 100%;
+
+      .mat-form-field-appearance-fill .mat-form-field-flex {
+        background-color: $background-color;
+      }
+
+      .mat-select-arrow {
+        color: $primary-color;
+      }
+    }
+
+    mat-radio-group,
+    mat-checkbox-group {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      mat-radio-button,
+      mat-checkbox {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        background-color: $background-color;
+        padding: 10px;
+        border-radius: $border-radius;
+        box-shadow: $box-shadow;
+
+        &.mat-radio-checked,
+        &.mat-checkbox-checked {
+          background-color: $secondary-color;
+        }
+      }
+    }
+  }
+
+  button {
+    background-color: $primary-color;
+    color: white;
+    padding: 10px 20px;
+    border-radius: $border-radius;
+    box-shadow: $box-shadow;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: darken($primary-color, 10%);
+    }
+  }
+}

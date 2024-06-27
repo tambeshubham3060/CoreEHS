@@ -1,0 +1,40 @@
+<div class="quiz-container">
+  <h1 class="mt-5">Quiz</h1>
+  <div class="timer">
+    <span>Time Remaining: {{ formatTime(timeRemaining) }}</span>
+  </div>
+  <div *ngIf="quizData" class="my-4">
+    <div *ngFor="let question of quizData.questions">
+      <div class="question-container my-3">
+        <form [formGroup]="questionForm">
+          <h3>{{ question.questionText }}</h3>
+          <div *ngIf="question.answerType === 'radio'">
+            <mat-radio-group formControlName="{{ question.id }}">
+              <mat-radio-button *ngFor="let option of question.options" [value]="option">
+                {{ option }}
+              </mat-radio-button>
+            </mat-radio-group>
+          </div>
+          <div *ngIf="question.answerType === 'checkbox'">
+            <div formGroupName="{{ question.id }}">
+              <mat-checkbox *ngFor="let option of question.options" formControlName="{{ option }}">
+                {{ option }}
+              </mat-checkbox>
+            </div>
+          </div>
+          <div *ngIf="question.answerType === 'dropdown'">
+            <mat-form-field appearance="fill">
+              <mat-label>Select an option</mat-label>
+              <mat-select formControlName="{{ question.id }}">
+                <mat-option *ngFor="let option of question.options" [value]="option">
+                  {{ option }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <button mat-raised-button color="primary" class="mb-5" (click)="submitQuiz()">Submit Quiz</button>
+</div>

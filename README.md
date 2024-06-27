@@ -25,3 +25,29 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+
+# CoreEHS Quiz Application
+
+## Overview
+
+CoreEHS Quiz Application is an Angular-based project designed to display questions. The application supports various answer types. It incorporates a login and registration system with Angular guards for secure navigation, error handling, and responsive design with SCSS.
+
+## Features
+
+- Dynamic questions and answers from service(dummy data).
+- Session timer with automatic logout
+- User login and registration with guards
+- Error handling
+- Lazy loading for better performance
+
+## Technologies Used
+
+- Angular 14
+- Angular Material
+- Reactive Forms
+- SCSS
+- RxJS
+- TypeScript
+
+
